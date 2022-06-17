@@ -50,9 +50,7 @@ def largest_contiguous_subsum(nums) # time = O(n^2)
 end
 
 def largest_contiguous_subsum_two(nums) # time = O(n)
-    sums = 0
-    nums.each { |num| sums += num if num > 0 }
-    sums
+    
 end
 
 # Let's make a better version. 
@@ -62,24 +60,36 @@ end
 # One variable should track the largest sum so far and another 
 # to track the current sum. We'll leave the rest to you.
 
-def largest_contiguous_subsum_three(nums)
+def largest_contiguous_subsum_three(nums) # time = O(n)
     largest_sum = 0
     current_sum = 0
     nums.each do |num|
         current_sum += num
         current_sum > largest_sum ? largest_sum = current_sum : largest_sum
     end
-
     largest_sum
-    
-
 end
 
 list = [5, 3, -7]
+
+list_2 = [2, 3, -6, 7, -6, 7]
+
+list_3 = [-5, -1, -3]
+    largest_contiguous_subsum(list) # => 8 (from [7, -6, 7])
 p largest_contiguous_subsum(list) # => 8
 p largest_contiguous_subsum_two(list) # => 8
-p largest_contiguous_subsum_three(list) # => 8
-    # possible sub-sums
+p largest_contiguous_subsum_three(list)
+
+p largest_contiguous_subsum(list_2) # => 8
+p largest_contiguous_subsum_two(list_2) # => 8
+p largest_contiguous_subsum_three(list_2)
+
+p largest_contiguous_subsum(list_3) # => -1
+p largest_contiguous_subsum_two(list_3) # => -1
+p largest_contiguous_subsum_three(list_3)# => -1
+   
+
+# possible sub-sums
     # [5]           # => 5
     # [5, 3]        # => 8 --> we want this one
     # [5, 3, -7]    # => 1

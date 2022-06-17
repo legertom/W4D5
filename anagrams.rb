@@ -83,4 +83,4 @@ def bonus_anagram(string1, string2)
 end
 
 p bonus_anagram(string, other_string) #false
-p bonus_anagram(string, other_other_string) 
+p bonus_anagram(string, other_other_string) #true
